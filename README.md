@@ -9,10 +9,6 @@ Discord Ticket Bot: Effortlessly open support tickets via DM, while moderators c
 - Create a channel in `server` and name it `server-logs`
 - Collect The Category ID of the `server` category
 
-### Deployment
-
-[![Deploy On Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)](https://heroku.com/deploy?template=https://github.com/riz4d/Discord-Ticket-System/)
-
 ### Deploy VPS
 
 #### Configuration:
