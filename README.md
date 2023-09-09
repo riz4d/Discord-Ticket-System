@@ -53,6 +53,9 @@ python3 main.py
 
 [Submit Issues](https://github.com/riz4d/Discord-Ticket-System/issues)
 
+### License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ### Developer
 
