@@ -37,7 +37,13 @@ async def on_message(message):
                 user_id = int(channel_name)
                 user = await bot.fetch_user(user_id)
                 print(user)
-                await user.send(message.content)
+                try:
+                    await user.send(message.content)
+                except:
+                    if message.attachments:
+                        for attachment in message.attachments:
+                            await user.send(attachment.url)
+                
         
                 print(f"Message sent to user {user.name}#{user.discriminator}.")
             except ValueError:
@@ -59,11 +65,21 @@ async def on_message(message):
                     print(channel_names)
                     if userchannelid in channel_names:
                         send_to_channel = discord.utils.get(category.text_channels, name=userchannelid)
-                        await send_to_channel.send(message.content)
+                        try:
+                            await send_to_channel.send(message.content)
+                        except:
+                            if message.attachments:
+                                for attachment in message.attachments:
+                                    await send_to_channel.send(attachment.url)
                     else:
                         await category.create_text_channel(userchannelid)
                         send_to_channel = discord.utils.get(category.text_channels, name=userchannelid)
-                        await send_to_channel.send(message.content)
+                        try:
+                            await send_to_channel.send(message.content)
+                        except:
+                            if message.attachments:
+                                for attachment in message.attachments:
+                                    await send_to_channel.send(attachment.url)
     except Exception as x:
         try:
             server = bot.get_guild(server_id)
